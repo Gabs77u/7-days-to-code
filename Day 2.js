@@ -1,15 +1,15 @@
-let Nome = prompt("Qual o seu nome?:");
-let Idade = prompt("Quantos anos você tem?:");
-let Linguagem = prompt("Qual linguagem de programação você está estudando?:");
-let Condicao = prompt("Você gosta de estudar ", Linguagem, "? Responda com o número 1 para SIM ou 2 para NÃO.:");
+let nome = prompt("Qual o seu nome?:");
+let idade = prompt("Quantos anos você tem?:");
+let linguagem = prompt("Qual linguagem de programação você está estudando?:");
+let condicao = prompt("Você gosta de estudar ? 1/SIM 2/NÃO ", linguagem);
 
-const msg = `"Olá, ${Nome}! Você tem ${Idade} anos e já esta aprendendo ${Linguagem}"`;
+const msg = `"Olá, ${nome}! Você tem ${idade} anos e já esta aprendendo ${linguagem}"`;
 alert(msg);
 
 
-if(Condicao == 1){
+if(condicao == 1){
 alert("Muito bom! Continue estudando e você terá muito sucesso !!!")
 }else{
-alert("Ahh que pena... Já tentou aprender outras linguagens ?!")
+alert("Isso é bem triste..")
 }
     
