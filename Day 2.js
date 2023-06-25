@@ -7,9 +7,9 @@ const msg = `"Olá, ${nome}! Você tem ${idade} anos e já esta aprendendo ${lin
 alert(msg);
 
 
-if(condicao == 1){
+if(condicao === "1"){
 alert("Muito bom! Continue estudando e você terá muito sucesso !!!")
 }else{
-alert("Isso é bem triste..")
-}
+    alert("Isso é bem triste...");
+    }
     
