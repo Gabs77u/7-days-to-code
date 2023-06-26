@@ -1,8 +1,13 @@
+const nome = prompt("Me diga seu nome por favor:");
+alert(`Ola, ${nome} !`)
+
+let intro = ""
+alert(`Bem vindo ${nome}, vamos jogar ?`)
+
 const numeroAdivinhacao = Math.ceil(Math.random() * 10);
 const acertou = false;
-let tentativas = 5;
 let chute = "";
-
+let tentativas = 5;
 while (tentativas > 0) {
     chute = prompt(`Tente adivinhar o número de 0 a 10. Você tem ${tentativas} tentativa(s):`);
     if (chute === numeroAdivinhacao) {

@@ -1,38 +1,96 @@
+const nome = prompt("Me diga seu nome por favor:");
+alert(`Ola, ${nome} !`);
+
+//Loop de interação inicial
+const intro = prompt("Deseja continuar ?");
+if(intro == "sim"){
+    alert("Bem vindo(a) a lista de compras !");
+}else{
+    alert("Insira uma opção válida");
+}
 const frutas = [];
 const laticinios = [];
 const doces = [];
 const congelados = [];
-const comida = "";
-const pereciveis= [];
-const bebidas = [];
-const drogas = [];
-
+let comida = "";
+let pereciveis= [];
+let bebidas = [];
+let drogas = [];
 let categoria = "";
-let adicionarMais = "sim";
-//Loop de interação inicial
-while(adicionarMais != "não"){
-    adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim' ou 'não'.");
-    while (adicionarMais != "sim"||"Sim"||"SIM" && adicionarMais != "não") { 
+
+let interacao = "sim";
+while(interacao != "nao"){
+    interacao = prompt("Você deseja adicionar ou remover uma comida na lista de compras ?");
+    while (interacao != "sim" && interacao != "nao") { 
 	alert(`Operação não reconhecida!`);
-        adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim' ou 'não'.");
+        interacao = prompt("Você deseja adicionar ou remover uma comida na lista de compras ?");
+    }
+    if (interacao === "nao"){
+        break;
     }
 	
-    if (adicionarMais === "não"){
-        break;
+    let operacao = prompt("Você deseja adicionar ou remover um valor da lista?");
+    while (operacao != "adicionar" && operacao != "remover") { 
+	alert(`Operação não reconhecida!`);
+        operacao = prompt("Você deseja adicionar ou remover um valor da lista?");
     }
 	
     comida = prompt("Qual comida você deseja inserir?");
     categoria = prompt("Em qual categoria essa comida se encaixa: 'frutas', 'laticínios', 'doces' ou 'congelados'?");
     if(categoria === 'frutas'){
-        frutas.push(comida);
+        if (operacao === "adicionar"){
+            frutas.push(comida);
+        } else {
+            let index = frutas.indexOf(comida);
+            if (index > -1) {
+                frutas.splice(index, 1);
+            } else {
+                alert("Essa comida não foi encontrada na lista.");
+            }
+        }
     } else if (categoria === 'laticínios'){
-        laticinios.push(comida);
+        if (operacao === "adicionar"){
+            laticinios.push(comida);
+        } else {
+            let index = laticinios.indexOf(comida);
+            if (index > -1) {
+                laticinios.splice(index, 1);
+            } else {
+                alert("Essa comida não foi encontrada na lista.");
+            }
+        }
     } else if (categoria === 'doces'){
-        doces.push(comida);
+        if (operacao === "adicionar"){
+            doces.push(comida);
+        } else {
+            let index = doces.indexOf(comida);
+            if (index > -1) {
+                doces.splice(index, 1);
+            } else {
+                alert("Essa comida não foi encontrada na lista.");
+            }
+        }
     } else if (categoria === 'congelados'){
-        congelados.push(comida);
+        if (operacao === "adicionar"){
+            congelados.push(comida);
+        } else {
+            let index = congelados.indexOf(comida);
+            if (index > -1) {
+                congelados.splice(index, 1);
+            } else {
+                alert("Essa comida não foi encontrada na lista.");
+            }
+        }
     } else {
-        alert("Essa categoria não foi pré-definida.")
+        alert("Essa categoria não foi definida.");
     }
 }
-alert(`Lista de compras:\n Drogas:${drogas}\n Frutas: ${frutas}\n  Laticínios: ${laticinios}\n  Doces: ${doces}\n  Congelados: ${congelados}\n Pereciveis: ${pereciveis} \n Bebidas: ${bebidas}\n`);
+alert(`Lista de compras:
+\n Drogas:${drogas}
+\n Frutas: ${frutas}
+\n Laticínios: ${laticinios}
+\n Doces: ${doces}
+\n Congelados: ${congelados}
+\n Pereciveis: ${pereciveis} 
+\n Bebidas: ${bebidas}
+\n`);
